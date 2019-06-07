@@ -137,4 +137,14 @@ describe GrooveHQ::Client::Tickets, integration: true do
 
   end
 
+  describe "#update_ticket_tags" do
+
+    it "successfully updates ticket tags" do
+      client.update_ticket_tags('8', ['test_tag_1', 'test_tag_2'])
+      current_tags = client.ticket('8').tags
+      expect(current_tags).to eq ['test_tag_1', 'test_tag_2']
+    end
+
+  end
+
 end

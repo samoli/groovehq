@@ -43,6 +43,10 @@ module GrooveHQ
         put("/tickets/#{ticket_number}/assigned_group", group: group)
       end
 
+      def update_ticket_tags(ticket_number, tags)
+        put("/tickets/#{ticket_number}/tags", tags: tags)
+      end
+
     end
 
   end
